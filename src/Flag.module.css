@@ -1,0 +1,131 @@
+html, body {
+    
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    background-color: lightblue !important;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    font-size: xx-large;
+            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808); /* Saffron, White, Green */
+            -webkit-background-clip: text;
+            color: transparent; /* This will make the gradient visible as text color */
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+
+    /* position: relative;
+    z-index: 1;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* margin-bottom: 20px; Gives some space between the title and the frame */
+}
+
+.frame {
+    width: 80vw;
+    height: 80vh;
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+    overflow: hidden; /* Ensures anything going outside the frame is not displayed */
+    box-shadow: 5px 5px 5px grey;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ocean {
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+    animation-delay: -3.5s;
+}
+
+.oceanTop .wave {
+    animation: wave-reverse 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+@keyframes wave-reverse {
+    0% {
+        margin-left: -1600px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+
+.oceanTop {
+    top: 0%;
+    transform: rotate(180deg);
+}
+
+.chakra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.chakraInner {
+    height: 200px;
+    width: 200px;
+    border: 10px solid navy;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.stroke {
+    background: navy;
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    background-color: navy;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+}
